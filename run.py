@@ -16,12 +16,11 @@ def listenHotword():
         hotword()
 
 
-    # Start both processes
+# Start both processes
 if __name__ == '__main__':
         p1 = multiprocessing.Process(target=startJarvis)
         p2 = multiprocessing.Process(target=listenHotword)
         p1.start()
-        subprocess.call([r'device.bat'])
         p2.start()
         p1.join()
 
@@ -30,3 +29,5 @@ if __name__ == '__main__':
             p2.join()
 
         print("system stop")
+        
+        
